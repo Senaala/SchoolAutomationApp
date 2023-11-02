@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "947984661678",
+    "project_id": "school-automation-30d3f",
+    "storage_bucket": "school-automation-30d3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947984661678:android:e552199d9813252dce813f",
+        "android_client_info": {
+          "package_name": "com.android.senaala.schoolAutomation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-EPr7WOj0QlzEI4OuFXaufCyx27-GZpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
