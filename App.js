@@ -1,20 +1,57 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//Navigation
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+//Sayfalar
+import HomePages from './src/components/HomePages';
+import CreatePages from './src/components/CreatePages';
+//Icons
+import { Icon } from 'react-native-elements';
+
+
+
+//Function
+ function App() {
+  const tab=createBottomTabNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+    <NavigationContainer>
+      <tab.Navigator 
+      initialRouteName='Home'
+      screenOptions={
+        {
+          headerShown:true,
+          tabBarActiveTintColor:'blue',
+          tabBarInactiveTintColor:'tomato',
+        }
+      }>
+        {/* Tab için geçiş bileşenleri */}
+        <tab.Screen 
+        name='Home' 
+        component={HomePages}
+        options={{
+          tabBarLabel:'Home',
+          tabBarIcon:({color,size})=>(
+            <Icon name='home' color={color} size={size} />
+          )
+        }}
+        />
+
+        <tab.Screen 
+        name='CreatePages' 
+        component={CreatePages}
+        options={{
+          tabBarLabel:'Create',
+          tabBarIcon:({color,size})=>(
+            <Icon name='create' color={color} size={size} />
+          )
+        }}
+        />
+        
+      </tab.Navigator>
+    </NavigationContainer>
+   
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default  App
